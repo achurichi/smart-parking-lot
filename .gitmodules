@@ -1,0 +1,3 @@
+[submodule "splot_proximity-sensor"]
+	path = splot_proximity-sensor
+	url = https://github.com/achurichi/splot_proximity-sensor
