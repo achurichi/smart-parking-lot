@@ -1,3 +1,6 @@
 [submodule "splot_proximity-sensor"]
 	path = splot_proximity-sensor
 	url = https://github.com/achurichi/splot_proximity-sensor
+[submodule "splot_backend"]
+	path = splot_backend
+	url = https://github.com/ExequielGonzalez/splot_backend
