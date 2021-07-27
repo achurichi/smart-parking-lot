@@ -4,3 +4,6 @@
 [submodule "splot_backend"]
 	path = splot_backend
 	url = https://github.com/ExequielGonzalez/splot_backend
+[submodule "splot_vehicle-detection"]
+	path = splot_vehicle-detection
+	url = https://github.com/achurichi/splot_vehicle-detection
