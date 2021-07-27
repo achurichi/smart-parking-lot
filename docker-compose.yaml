@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  vehicle-detection-api:
+    container_name: "vehicle-detection-api"
+    image: vehicle-detection-api:latest
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - ./splot_vehicle-detection/src/:/root/app
