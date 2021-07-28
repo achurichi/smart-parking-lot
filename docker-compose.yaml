@@ -11,5 +11,7 @@ services:
       - 8000:8000
     volumes:
       - ./splot_vehicle-detection/src/:/root/app
+      - ${HOST_MODELS_PATH}:/root/app/models
+      - ${HOST_IMAGES_PATH}:/root/app/images
     env_file:
       - ./config/vehicle-detection.env
