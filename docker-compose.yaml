@@ -8,7 +8,6 @@ services:
     ports:
       - 8000:8000
     volumes:
-      # - ./splot_vehicle-detection/src:/root/app
       - ${HOST_IMAGES_PATH}:/root/app/images
     env_file:
       - ./config/vehicle-detection.env
