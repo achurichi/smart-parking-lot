@@ -7,3 +7,6 @@
 [submodule "splot_vehicle-detection"]
 	path = splot_vehicle-detection
 	url = https://github.com/achurichi/splot_vehicle-detection
+[submodule "splot_backend-db"]
+	path = splot_backend-db
+	url = https://github.com/achurichi/splot_backend-db
