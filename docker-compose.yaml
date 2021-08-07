@@ -12,6 +12,13 @@ services:
     env_file:
       - ./config/vehicle-detection.env
 
+  backend-db:
+    container_name: "backend-db"
+    image: backend-db:latest
+    restart: always
+    ports:
+      - 5000:5000
+
   db:
     container_name: "db"
     image: postgres:13-alpine
