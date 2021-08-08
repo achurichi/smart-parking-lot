@@ -10,3 +10,6 @@
 [submodule "splot_backend-db"]
 	path = splot_backend-db
 	url = https://github.com/achurichi/splot_backend-db
+[submodule "mqtt_microservice"]
+	path = mqtt_microservice
+	url = https://github.com/ExequielGonzalez/mqtt_microservice
