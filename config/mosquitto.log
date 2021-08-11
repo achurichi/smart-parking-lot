@@ -1,0 +1,7 @@
+1628652674: No will message specified.
+1628652674: Sending CONNACK to mqtt_sub (0, 0)
+1628652674: Received SUBSCRIBE from mqtt_sub
+1628652674: 	proximity_sensor (QoS 0)
+1628652674: Sending SUBACK to mqtt_sub
+1628652734: Received PINGREQ from mqtt_sub
+1628652734: Sending PINGRESP to mqtt_sub

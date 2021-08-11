@@ -27,5 +27,38 @@ services:
       - 5432:5432
     volumes:
       - ./.db-data:/var/lib/postgresql/data
+    environment:
+      DB_HOST: localhost
+      DB_NAME: smart-parking-lot
+      POSTGRES_PASSWORD: splot
     env_file:
       - ./config/db.env
+
+  broker:
+    image: eclipse-mosquitto:2.0.11
+    volumes:
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./config/mosquitto.log:/mosquitto/log/mosquitto.log
+    ports:
+      - 1883:1883
+
+  mqtt_microservice:
+    build: ./mqtt_microservice
+    restart: always
+    environment:
+      MQTT_URL: mqtt://broker:1883
+      MQTT_TOPIC: proximity_sensor
+    depends_on:
+      - broker
+    command: npx nodemon -L mqtt_bridge.js
+
+  backend-photo:
+    build: ./splot_backend
+    environment:
+      TEST: "asd"
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+    command: npx nodemon -L index.js
