@@ -27,10 +27,6 @@ services:
       - 5432:5432
     volumes:
       - ./.db-data:/var/lib/postgresql/data
-    environment:
-      DB_HOST: localhost
-      DB_NAME: smart-parking-lot
-      POSTGRES_PASSWORD: splot
     env_file:
       - ./config/db.env
 
