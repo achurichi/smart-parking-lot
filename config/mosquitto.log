@@ -12,3 +12,7 @@
 1628653085: Sending SUBACK to mqtt_sub
 1628653145: Received PINGREQ from mqtt_sub
 1628653145: Sending PINGRESP to mqtt_sub
+1628653206: Received PINGREQ from mqtt_sub
+1628653206: Sending PINGRESP to mqtt_sub
+1628653266: Received PINGREQ from mqtt_sub
+1628653266: Sending PINGRESP to mqtt_sub

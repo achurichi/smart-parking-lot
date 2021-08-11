@@ -56,6 +56,8 @@ services:
     build: ./splot_backend
     environment:
       TEST: "asd"
+    volumes:
+      - ./images:/usr/src/images
     ports:
       - 3000:3000
     command: npx nodemon -L index.js
