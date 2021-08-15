@@ -38,7 +38,7 @@ services:
     image: eclipse-mosquitto:2.0.11
     volumes:
       - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - ./config/mosquitto.log:/mosquitto/log/mosquitto.log
+      - ./logs/mosquitto.log:/mosquitto/log/mosquitto.log
     ports:
       - 1883:1883
 
@@ -50,6 +50,8 @@ services:
       MQTT_TOPIC: proximity_sensor
     depends_on:
       - broker
+    volumes:
+      - ./mqtt_microservice/mqtt_bridge.js:/usr/src/mqtt_bridge.js
     command: npx nodemon -L mqtt_bridge.js
 
   backend-photo:
@@ -58,6 +60,8 @@ services:
       TEST: "asd"
     volumes:
       - ./images:/usr/src/images
+      - ./splot_backend/index.js:/usr/src/index.js
+      - ./config/cameras-ip.json:/usr/src/config/cameras-ip.json
     ports:
       - 3000:3000
     command: npx nodemon -L index.js
