@@ -20,8 +20,13 @@ services:
       - 5000:5000
     depends_on:
       - db
+    volumes:
+      - ${HOST_IMAGES_PATH}:/usr/src/app/tmp-photos
+      - ./.db-data/photos:/usr/src/app/db-photos
     env_file:
       - ./config/backend-db.env
+    entrypoint: "sh"
+    command: ./scripts/wait-for-postgres.sh
 
   db:
     container_name: "db"
