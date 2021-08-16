@@ -16,6 +16,8 @@ services:
     container_name: "backend-db"
     image: backend-db:latest
     restart: always
+    depends_on:
+      - db
     ports:
       - 5000:5000
 
@@ -48,6 +50,7 @@ services:
       - broker
     volumes:
       - ./mqtt_microservice/mqtt_bridge.js:/usr/src/mqtt_bridge.js
+      - ./mqtt_microservice/functions.js:/usr/src/functions.js
     command: npx nodemon -L mqtt_bridge.js
 
   backend-photo:
