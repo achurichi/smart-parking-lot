@@ -23,10 +23,12 @@ services:
     depends_on:
       - db
     volumes:
-      - ${HOST_IMAGES_PATH}:/usr/src/app/tmp-photos
-      - ./.db-data/photos:/usr/src/app/db-photos
+      - ${HOST_IMAGES_PATH}:/usr/src/app/tmp-images
+      - ./.db-images:/usr/src/app/db-images
     env_file:
       - ./config/backend-db.env
+    entrypoint: "sh"
+    command: ./scripts/wait-for-postgres.sh
 
 
   db:
