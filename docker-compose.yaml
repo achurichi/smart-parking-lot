@@ -27,8 +27,7 @@ services:
       - ./.db-data/photos:/usr/src/app/db-photos
     env_file:
       - ./config/backend-db.env
-    entrypoint: "sh"
-    command: ./scripts/wait-for-postgres.sh
+
 
   db:
     container_name: "db"
@@ -73,3 +72,4 @@ services:
     ports:
       - 3000:3000
     command: npx nodemon -L index.js
+
