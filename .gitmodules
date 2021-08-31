@@ -13,3 +13,6 @@
 [submodule "mqtt_microservice"]
 	path = mqtt_microservice
 	url = https://github.com/ExequielGonzalez/mqtt_microservice
+[submodule "SPloT_frontend"]
+	path = SPloT_frontend
+	url = https://github.com/ExequielGonzalez/SPloT_frontend.git
