@@ -4,8 +4,7 @@ build-imgs:
 up:
 	docker-compose up -d
 
-all: 
-	build-imgs up
+all: build-imgs up
 
 one img:
 	docker build -t $(img) ./splot_$(img)/
