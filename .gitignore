@@ -1,5 +1,6 @@
 .env
 .db-data
 .db-images
+.ui-images
 /images
 /logs

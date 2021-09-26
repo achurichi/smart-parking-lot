@@ -25,6 +25,8 @@ services:
     volumes:
       - ${HOST_IMAGES_PATH}:/usr/src/app/tmp-images
       - ./.db-images:/usr/src/app/db-images
+      - ./.ui-images/logo:/usr/src/app/ui-images/logo
+      - ./.ui-images/banner:/usr/src/app/ui-images/banner
     env_file:
       - ./config/backend-db.env
     entrypoint: "sh"
