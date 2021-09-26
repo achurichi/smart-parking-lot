@@ -1,6 +1,8 @@
 .env
 .db-data
 .db-images
+db-backup/backup-cron
+db-backup/backups
 .ui-images
 /images
 /logs
