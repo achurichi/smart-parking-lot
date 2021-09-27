@@ -25,8 +25,7 @@ services:
     volumes:
       - ${HOST_IMAGES_PATH}:/usr/src/app/tmp-images
       - ./.db-images:/usr/src/app/db-images
-      - ./.ui-images/logo:/usr/src/app/ui-images/logo
-      - ./.ui-images/banner:/usr/src/app/ui-images/banner
+      - ./.ui-images:/usr/src/app/ui-images
     env_file:
       - ./config/backend-db.env
     entrypoint: "sh"
@@ -77,3 +76,11 @@ services:
       - 3000:3000
     command: npx nodemon -L index.js
 
+  crontab-backup:
+    container_name: "crontab-backup"
+    image: crontab-backup:latest
+    restart: always
+    volumes:
+      - ./.db-data:/usr/src/db-data
+      - ./.db-images:/usr/src/db-images
+      - ./db-backup:/usr/src/db-backup

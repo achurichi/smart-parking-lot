@@ -16,3 +16,6 @@
 [submodule "SPloT_frontend"]
 	path = SPloT_frontend
 	url = https://github.com/ExequielGonzalez/SPloT_frontend.git
+[submodule "splot_crontab-backup"]
+	path = splot_crontab-backup
+	url = git@github.com:achurichi/splot_crontab-backup.git
