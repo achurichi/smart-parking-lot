@@ -19,3 +19,6 @@
 [submodule "splot_crontab-backup"]
 	path = splot_crontab-backup
 	url = git@github.com:achurichi/splot_crontab-backup.git
+[submodule "splot_spotlight"]
+	path = splot_spotlight
+	url = git@github.com:achurichi/splot_spotlight.git
