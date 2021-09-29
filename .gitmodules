@@ -22,3 +22,6 @@
 [submodule "splot_spotlight"]
 	path = splot_spotlight
 	url = git@github.com:achurichi/splot_spotlight.git
+[submodule "splot_traffic-light"]
+	path = splot_traffic-light
+	url = git@github.com:achurichi/splot_traffic-light.git
