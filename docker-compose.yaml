@@ -57,11 +57,16 @@ services:
     environment:
       MQTT_URL: mqtt://broker:1883
       MQTT_TOPIC: proximity_sensor
+      TOPIC_SPOTLIGHT: spotlight
+      TOPIC_TRAFFIC_LIGHT: traffic_light
+      TOPIC_PROXIMITY: proximity_sensor
+
     depends_on:
       - broker
     volumes:
       - ./mqtt_microservice/mqtt_bridge.js:/usr/src/mqtt_bridge.js
-      - ./mqtt_microservice/functions.js:/usr/src/functions.js
+      - ./mqtt_microservice/http-functions.js:/usr/src/http-functions.js
+      - ./mqtt_microservice/mqtt-functions.js:/usr/src/mqtt-functions.js
     command: npx nodemon -L mqtt_bridge.js
 
   backend-photo:
