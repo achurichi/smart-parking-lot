@@ -16,7 +16,9 @@ up:
 
 all: create-dirs build-imgs up
 
-exe: create-dirs w-imgs up
+backend: 
+	docker build -t backend-db ./splot_backend-db/
+	docker-compose up -d backend-db
 
 one img:
 	docker build -t $(img) ./splot_$(img)/
