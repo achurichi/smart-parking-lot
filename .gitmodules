@@ -25,3 +25,6 @@
 [submodule "splot_traffic-light"]
 	path = splot_traffic-light
 	url = https://github.com/achurichi/splot_traffic-light.git
+[submodule "splot_entry-display"]
+	path = splot_entry-display
+	url = https://github.com/ExequielGonzalez/splot_entry-display.git
