@@ -3,7 +3,7 @@ version: "3.7"
 services:
   vehicle-detection-api:
     container_name: "vehicle-detection-api"
-    image: vehicle-detection-api:latest
+    build: ./splot_vehicle-detection
     restart: always
     ports:
       - 8000:8000
@@ -14,7 +14,7 @@ services:
 
   backend-db:
     container_name: "backend-db"
-    image: backend-db:latest
+    build: ./splot_backend-db
     restart: always
     depends_on:
       - db
@@ -44,6 +44,7 @@ services:
       - ./config/db.env
 
   broker:
+    container_name: "mosquitto-broker"
     image: eclipse-mosquitto:2.0.11
     volumes:
       - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
@@ -52,6 +53,7 @@ services:
       - 1883:1883
 
   mqtt_microservice:
+    container_name: "mqtt-microservice"
     build: ./mqtt_microservice
     restart: always
     environment:
@@ -71,6 +73,7 @@ services:
     command: npx nodemon -L mqtt_bridge.js
 
   backend-photo:
+    container_name: "backend-photo"
     build: ./splot_backend
     environment:
       TEST: "asd"
@@ -84,7 +87,7 @@ services:
 
   crontab-backup:
     container_name: "crontab-backup"
-    image: crontab-backup:latest
+    build: ./splot_crontab-backup
     restart: always
     volumes:
       - ./.db-data:/usr/src/db-data

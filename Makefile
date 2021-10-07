@@ -14,7 +14,7 @@ w-imgs:
 up:
 	docker-compose up -d
 
-all: create-dirs build-imgs up
+all: create-dirs up
 
 backend: 
 	docker build -t backend-db ./splot_backend-db/
