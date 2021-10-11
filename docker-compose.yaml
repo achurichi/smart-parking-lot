@@ -46,6 +46,7 @@ services:
   broker:
     container_name: "mosquitto-broker"
     image: eclipse-mosquitto:2.0.11
+    restart: always
     volumes:
       - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
       - ./logs/mosquitto.log:/mosquitto/log/mosquitto.log
@@ -75,8 +76,7 @@ services:
   backend-photo:
     container_name: "backend-photo"
     build: ./splot_backend
-    environment:
-      TEST: "asd"
+    restart: always
     volumes:
       - ./images:/usr/src/images
       - ./splot_backend/index.js:/usr/src/index.js
@@ -93,3 +93,19 @@ services:
       - ./.db-data:/usr/src/db-data
       - ./.db-images:/usr/src/db-images
       - ./db-backup:/usr/src/db-backup
+
+  frontend:
+    container_name: "splot-frontend"
+    build: ./SPloT_frontend
+    restart: always
+    ports:
+      - 8080:8080
+    command: http-server -p 8080
+
+  entry-display:
+    container_name: "entry-display"
+    build: ./splot_entry-display
+    restart: always
+    ports:
+      - 8081:8081
+    command: http-server -p 8081
